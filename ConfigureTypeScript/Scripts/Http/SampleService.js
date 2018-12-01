@@ -1,7 +1,4 @@
-//import { HttpFetchService } from "./HttpFetchService"
-//import { SampleRequest } from "../Models/SampleModels"
-///<reference path="../Models/SampleModels.ts" />
-///<reference path="./HttpFetchService.ts" />
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15,10 +12,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
+var HttpFetchService_1 = require("./HttpFetchService");
 var SampleService = /** @class */ (function (_super) {
     __extends(SampleService, _super);
     function SampleService() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return SampleService;
-}(HttpFetchService));
+}(HttpFetchService_1.HttpFetchService));
+exports.SampleService = SampleService;

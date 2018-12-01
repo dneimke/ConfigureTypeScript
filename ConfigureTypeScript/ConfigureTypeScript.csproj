@@ -6,10 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\Home.js" />
-    <Content Remove="wwwroot\js\HttpFetchService.js" />
-    <Content Remove="wwwroot\js\SampleModels.js" />
-    <Content Remove="wwwroot\js\SampleService.js" />
+    <None Remove="webpack.config.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="webpack.config.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,9 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\Home.js" />
-    <None Include="wwwroot\js\HttpFetchService.js" />
-    <None Include="wwwroot\js\SampleModels.js" />
-    <None Include="wwwroot\js\SampleService.js" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 </Project>

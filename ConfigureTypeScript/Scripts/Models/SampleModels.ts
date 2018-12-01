@@ -1,9 +1,9 @@
 ﻿
-class SampleRequest {
+export class SampleRequest {
     public name: string;
 }
 
-class SampleResponse {
+export class SampleResponse {
     public title: string;  
 }
 

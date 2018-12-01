@@ -1,11 +1,8 @@
-﻿//import { SampleService } from '../Http/SampleService';
-//import { SampleResponse } from '../Models/SampleModels';
+﻿import { SampleService } from '../Http/SampleService';
+import { SampleResponse } from '../Models/SampleModels';
 
-///<reference path="../Http/HttpFetchService.ts" />
-///<reference path="../Http/SampleService.ts" />
-///<reference path="../Models/SampleModels.ts" />
 
-class HomePage {
+export class HomePage {
 
     public Init(hostElementId: string, buttonId: string) { 
 

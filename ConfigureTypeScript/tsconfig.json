@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "none",
+    "module": "commonjs",
     "noImplicitAny": true,
     "noEmitOnError": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es5",
@@ -11,7 +11,8 @@
       "es2015",
       "es5",
       "dom"
-    ]
+    ],
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules",

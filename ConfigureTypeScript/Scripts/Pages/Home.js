@@ -1,8 +1,6 @@
-//import { SampleService } from '../Http/SampleService';
-//import { SampleResponse } from '../Models/SampleModels';
-///<reference path="../Http/HttpFetchService.ts" />
-///<reference path="../Http/SampleService.ts" />
-///<reference path="../Models/SampleModels.ts" />
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var SampleService_1 = require("../Http/SampleService");
 var HomePage = /** @class */ (function () {
     function HomePage() {
     }
@@ -10,7 +8,7 @@ var HomePage = /** @class */ (function () {
         var hostElement = document.getElementById(hostElementId);
         var button = document.getElementById(buttonId);
         button.addEventListener('click', function (e) {
-            var httpService = new SampleService();
+            var httpService = new SampleService_1.SampleService();
             httpService.Post('/Home/GetMessage', {})
                 .then(function (model) {
                 hostElement.innerText = model.title;
@@ -19,6 +17,7 @@ var HomePage = /** @class */ (function () {
     };
     return HomePage;
 }());
+exports.HomePage = HomePage;
 document.addEventListener('DOMContentLoaded', function () {
     var page = new HomePage();
     page.Init('outputLabel', 'runButton');

@@ -1,9 +1,7 @@
-﻿//import { HttpFetchService } from "./HttpFetchService"
-//import { SampleRequest } from "../Models/SampleModels"
-///<reference path="../Models/SampleModels.ts" />
-///<reference path="./HttpFetchService.ts" />
+﻿import { HttpFetchService } from "./HttpFetchService"
+import { SampleRequest } from "../Models/SampleModels"
 
-class SampleService extends HttpFetchService<SampleRequest> { 
+export class SampleService extends HttpFetchService<SampleRequest> { 
 
 }
 
