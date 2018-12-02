@@ -4,10 +4,13 @@ import { SampleResponse } from '../Models/SampleModels';
 
 export class HomePage {
 
-    public Init(hostElementId: string, buttonId: string) { 
+    hostElementId = 'outputLabel';
+    buttonId = 'runButton';
 
-        const hostElement = document.getElementById(hostElementId); 
-        const button = document.getElementById(buttonId);
+    public Init() { 
+
+        const hostElement = document.getElementById(this.hostElementId); 
+        const button = document.getElementById(this.buttonId);
 
         button.addEventListener('click', (e: Event) => {
             const httpService = new SampleService();  
@@ -19,11 +22,4 @@ export class HomePage {
         });
     }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    var page = new HomePage();
-    page.Init('outputLabel', 'runButton');
-}, false);
-
-
 

@@ -2,12 +2,11 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        home: './Scripts/Pages/Home.ts',
-        about: './Scripts/Pages/About.ts'
+        app: './Scripts/Pages'
     },
     mode: 'production',
     optimization: {
-        minimize: false
+        minimize: true
     },
     module: {
         rules: [
@@ -22,8 +21,10 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-        filename: '[name].js',
+        filename: 'app-bundle.js',
         path: path.resolve(__dirname, 'wwwroot/js'),
+        library: 'sample',
+        libraryTarget: 'umd'
     }
 };
 

@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\Pages\index.ts" />
     <None Remove="webpack.config.js" />
   </ItemGroup>
 
@@ -20,5 +21,9 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Pages\index.ts" />
   </ItemGroup>
 </Project>
