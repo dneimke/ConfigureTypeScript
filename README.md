@@ -4,8 +4,11 @@
 
 A supporting repo for my [blog article](https://medium.com/@dneimke/add-typescript-to-an-asp-net-core-project-e8f7411e7b58) about how to set up an ASP.NET Core project to use TypeScript.
 
-In the article, we first learn how to configure the solution to generate typescript files without modules.  Then, the 
-article introduces modules and webpack as the module loader.
+In the article, we first learn how to configure the solution to generate typescript files without modules.  
+
+The article then introduces modules and webpack as the module loader.
+
+There's room for a follow-up article to cover minification and bunding common scripts into a separate package.
 
 The branches in this repo represent the state of the codebase at each of those stages:
 
