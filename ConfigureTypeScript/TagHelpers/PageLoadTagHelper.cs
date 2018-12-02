@@ -9,6 +9,9 @@ namespace AspNetCoreScriptTagHelperOverride
         [HtmlAttributeName("pageName")]
         public string PageName { get; set; }
 
+        [HtmlAttributeName("initParams")]
+        public string  InitParams {get; set;}
+
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
@@ -19,7 +22,7 @@ namespace AspNetCoreScriptTagHelperOverride
 
             sb.AppendLine("document.addEventListener('DOMContentLoaded', function () {");
             sb.AppendLine(scriptContent);
-            sb.AppendLine("page.Init();");
+            sb.AppendLine($"page.Init({InitParams});");
             sb.AppendLine("}, false);");
             output.PostContent.AppendHtml(sb.ToString());
         }
