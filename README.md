@@ -13,4 +13,3 @@ The branches in this repo represent the state of the codebase at each of those s
 * [Branch 02-modules](https://github.com/dneimke/ConfigureTypeScript/tree/02-modules) - Convert to using modules and webpack to create a bundle per page.
 * [Branch 03-minification](https://github.com/dneimke/ConfigureTypeScript/tree/03-minification) - Combines and minifies the bundles.  Uses a custom TagHelper to inject page load scripts.
 
-From here the plan is to introduce minification and to optimize the bundles to reduce repetition.
