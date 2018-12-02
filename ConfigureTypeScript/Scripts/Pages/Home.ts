@@ -4,14 +4,12 @@
 export class HomePage {
 
     label: HTMLElement;
-    button: HTMLElement;
-
+    
     public Init(labelId: string, buttonId: string) { 
-
         this.label = document.getElementById(labelId); 
-        this.button = document.getElementById(buttonId);
 
-        this.button.addEventListener('click', this.onButtonClick.bind(this), false);
+        const button = document.getElementById(buttonId);
+        button.addEventListener('click', this.onButtonClick.bind(this), false);
     }
 
     private onButtonClick(e: Event) {
