@@ -12,7 +12,6 @@ namespace AspNetCoreScriptTagHelperOverride
     [HtmlTargetElement("page-load")]
     public class PageLoadScriptTagHelper : TagHelper
     {
-
         [HtmlAttributeName("pageName")]
         public string PageName { get; set; }
 

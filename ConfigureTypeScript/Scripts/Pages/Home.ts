@@ -1,15 +1,14 @@
-﻿import { SampleService } from '../Http/SampleService';
-import { SampleResponse } from '../Models/SampleModels';
+﻿import { SampleService, SampleResponse } from '../Shared';
 
 
 export class HomePage {
 
-    hostElementId = 'outputLabel';
+    labelId = 'outputLabel';
     buttonId = 'runButton';
 
     public Init() { 
 
-        const hostElement = document.getElementById(this.hostElementId); 
+        const label = document.getElementById(this.labelId); 
         const button = document.getElementById(this.buttonId);
 
         button.addEventListener('click', (e: Event) => {
@@ -17,9 +16,8 @@ export class HomePage {
                 
             httpService.Post<SampleResponse>('/Home/GetMessage', {})
                 .then((model) => {
-                    hostElement.innerText = model.title;
+                    label.innerText = model.title;
                 });
         });
     }
 }
-

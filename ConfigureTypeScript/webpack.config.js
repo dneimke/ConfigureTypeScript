@@ -2,11 +2,17 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './Scripts/Pages'
+        home: './Scripts/Pages/Home',
+        about: './Scripts/Pages/About'
     },
     mode: 'production',
     optimization: {
-        minimize: true
+        minimize: true,
+        splitChunks: {
+            chunks: 'all',
+            minSize: 0,
+            name: 'shared'
+        }
     },
     module: {
         rules: [
@@ -21,7 +27,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-        filename: 'app-bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'wwwroot/js'),
         library: 'sample',
         libraryTarget: 'umd'
