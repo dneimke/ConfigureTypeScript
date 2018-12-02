@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\Shared\Http\index.ts" />
+    <None Remove="Scripts\Pages\index.ts" />
+    <None Remove="Scripts\Shared\index.ts" />
     <None Remove="webpack.config.js" />
   </ItemGroup>
 
@@ -16,9 +19,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Shared\Http\index.ts" />
+    <TypeScriptCompile Include="Scripts\Pages\index.ts" />
+    <TypeScriptCompile Include="Scripts\Shared\index.ts" />
   </ItemGroup>
 </Project>

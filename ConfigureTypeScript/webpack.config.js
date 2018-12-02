@@ -2,12 +2,17 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        home: './Scripts/Pages/Home.ts',
-        about: './Scripts/Pages/About.ts'
+        home: './Scripts/Pages/Home',
+        about: './Scripts/Pages/About'
     },
     mode: 'production',
     optimization: {
-        minimize: false
+        minimize: true,
+        splitChunks: {
+            chunks: 'all',
+            minSize: 0,
+            name: 'shared'
+        }
     },
     module: {
         rules: [
@@ -24,6 +29,8 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'wwwroot/js'),
+        library: 'sample',
+        libraryTarget: 'umd'
     }
 };
 

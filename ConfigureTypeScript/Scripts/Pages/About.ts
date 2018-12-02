@@ -1,17 +1,10 @@
-﻿import { SampleService } from '../Http/SampleService';
+﻿import { SampleService } from '../Shared';
 
 export class AboutPage {
 
-    constructor(private service: SampleService) { }
+    constructor() { }
 
-    public Init(someElementId: string) {
-
-        console.info(`Initializing AboutPage / ${someElementId}`);
+    public Init() {
+        alert('Hello from the about page');
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    var page = new AboutPage(new SampleService());
-    page.Init('something');
-}, false);
