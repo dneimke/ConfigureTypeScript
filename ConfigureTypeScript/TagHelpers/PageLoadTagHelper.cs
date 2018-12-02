@@ -1,21 +1,18 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Text;
-using System.Text.Encodings.Web;
 
 namespace AspNetCoreScriptTagHelperOverride
 {
     [HtmlTargetElement("page-load")]
-    public class PageLoadScriptTagHelper : TagHelper
+    public class PageLoadTagHelper : TagHelper
     {
         [HtmlAttributeName("pageName")]
         public string PageName { get; set; }
 
-        
+        [HtmlAttributeName("initParams")]
+        public string  InitParams {get; set;}
+
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "script";    // Replaces <page-load> with <script> tag
@@ -25,7 +22,7 @@ namespace AspNetCoreScriptTagHelperOverride
 
             sb.AppendLine("document.addEventListener('DOMContentLoaded', function () {");
             sb.AppendLine(scriptContent);
-            sb.AppendLine("page.Init();");
+            sb.AppendLine($"page.Init({InitParams});");
             sb.AppendLine("}, false);");
             output.PostContent.AppendHtml(sb.ToString());
         }

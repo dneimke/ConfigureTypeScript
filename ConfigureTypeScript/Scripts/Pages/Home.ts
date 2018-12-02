@@ -3,21 +3,21 @@
 
 export class HomePage {
 
-    labelId = 'outputLabel';
-    buttonId = 'runButton';
+    label: HTMLElement;
+    
+    public Init(labelId: string, buttonId: string) { 
+        this.label = document.getElementById(labelId); 
 
-    public Init() { 
+        const button = document.getElementById(buttonId);
+        button.addEventListener('click', this.onButtonClick.bind(this), false);
+    }
 
-        const label = document.getElementById(this.labelId); 
-        const button = document.getElementById(this.buttonId);
+    private onButtonClick(e: Event) {
+        const httpService = new SampleService();
 
-        button.addEventListener('click', (e: Event) => {
-            const httpService = new SampleService();  
-                
-            httpService.Post<SampleResponse>('/Home/GetMessage', {})
-                .then((model) => {
-                    label.innerText = model.title;
-                });
-        });
+        httpService.Post<SampleResponse>('/Home/GetMessage', {})
+            .then((model) => {
+                this.label.innerText = model.title;
+            });
     }
 }
